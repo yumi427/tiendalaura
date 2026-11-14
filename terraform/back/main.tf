@@ -88,7 +88,7 @@ resource "aws_lambda_function" "chat" {
   filename         = data.archive_file.back.output_path
   source_code_hash = data.archive_file.back.output_base64sha256 # si cambia un archivo de back/, se vuelve a subir
   timeout          = 30                                         # el modelo puede tardar unos segundos
-  memory_size      = 256
+  memory_size      = 512
 
   environment {
     variables = {
